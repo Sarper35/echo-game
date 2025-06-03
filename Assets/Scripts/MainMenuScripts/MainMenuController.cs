@@ -44,6 +44,12 @@ public class MainMenuController : MonoBehaviour
         continueButton.gameObject.SetActive(PlayerPrefs.GetInt("gamestarted", 0) == 1);
     }
 
+    private void OnDisable()
+    {
+        // PlayerPrefs.SetInt("gamestarted", 0);
+
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -79,6 +85,12 @@ public class MainMenuController : MonoBehaviour
     public void SaveButtonClicked() 
     {
         //save i burada yap
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if(player != null)
+        {
+            player.GetComponent<PlayerMovement>().SavePosition();
+        }
     }
 
     public void ShowGameOver() 
@@ -98,6 +110,7 @@ public class MainMenuController : MonoBehaviour
 
     public void CloseGame() 
     {
+        PlayerPrefs.SetInt("gamestarted", 0);
         Application.Quit();
     }
 }

@@ -10,9 +10,21 @@ public class PlayerMovement : MonoBehaviour
     private float moveInput;
     private bool hasJumped = false;
 
+    private const string CHARACTER_X = "character-x";
+    private const string CHARACTER_Y = "character-y";
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void OnEnable()
+    {
+        if (PlayerPrefs.HasKey(CHARACTER_X))
+        {
+            transform.position = new Vector2(PlayerPrefs.GetFloat(CHARACTER_X), PlayerPrefs.GetFloat(CHARACTER_Y));
+            Debug.Log("Has Key Character X");
+        }
     }
 
     void Update()
@@ -30,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
             hasJumped = true;
             animator.SetTrigger("Jump");  // Trigger tetikle
         }
+    }
+
+    private void OnDisable()
+    {
+        // Save
+        SavePosition();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,5 +71,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         animator.SetFloat("speed", Mathf.Abs(moveInput));
+    }
+
+    public void SavePosition()
+    {
+        PlayerPrefs.SetFloat(CHARACTER_X, transform.position.x);
+        PlayerPrefs.SetFloat(CHARACTER_Y, transform.position.y);
     }
 }
