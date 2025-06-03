@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float moveInput;
     private bool hasJumped = false;
+    private bool _isGameOver = false;
+
+    private MainMenuController _mainMenuController;
 
     private const string CHARACTER_X = "character-x";
     private const string CHARACTER_Y = "character-y";
@@ -16,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _mainMenuController = FindObjectOfType<MainMenuController>();
     }
 
     void OnEnable()
@@ -71,11 +75,33 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         animator.SetFloat("speed", Mathf.Abs(moveInput));
+
+        if (transform.position.y < -10.0f)
+        {
+            _isGameOver = true;
+            DeletePositionData();
+            _mainMenuController.ShowGameOver();
+        }
     }
 
     public void SavePosition()
     {
+        if (_isGameOver)
+        {
+            return;
+        }
         PlayerPrefs.SetFloat(CHARACTER_X, transform.position.x);
         PlayerPrefs.SetFloat(CHARACTER_Y, transform.position.y);
+    }
+
+    public void DeletePositionData()
+    {
+        if (!PlayerPrefs.HasKey(CHARACTER_X) && !PlayerPrefs.HasKey(CHARACTER_Y))
+        {
+            return;
+        }
+        Debug.Log("Reset Data");
+        PlayerPrefs.DeleteKey(CHARACTER_X);
+        PlayerPrefs.DeleteKey(CHARACTER_Y);
     }
 }
