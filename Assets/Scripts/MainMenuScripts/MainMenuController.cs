@@ -104,6 +104,7 @@ public class MainMenuController : MonoBehaviour
     {
         mainMenuSet.gameObject.SetActive(false);
         gameOverSet.gameObject.SetActive(false);
+        mainMenuButtonSet.gameObject.SetActive(true);
         string sceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(sceneName);
     }

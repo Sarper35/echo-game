@@ -57097,9 +57097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1429784439}
-  target_offset: {x: 0, y: 0, z: -10}
+  target_offset: {x: 0, y: 0, z: -15}
   camera_speed: 5
-  level_bottom: -10
+  level_bottom: -20
   level_left: -40
   level_right: 660
 --- !u!1 &592585504

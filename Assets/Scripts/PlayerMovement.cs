@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+    public float deadDistance = -15f;
     public Animator animator;
 
     private Rigidbody2D rb;
@@ -76,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         animator.SetFloat("speed", Mathf.Abs(moveInput));
 
-        if (transform.position.y < -10.0f)
+        if (transform.position.y < deadDistance)
         {
             _isGameOver = true;
             DeletePositionData();

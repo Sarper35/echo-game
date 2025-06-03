@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   jumpForce: 8
+  deadDistance: -20
   animator: {fileID: 8305311215902476367}
 --- !u!95 &8305311215902476367
 Animator:

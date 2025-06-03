@@ -147,9 +147,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1335081619440153904, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335081619440153904, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2066970642556843553, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224620997281216705, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224620997281216705, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224620997281216705, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5376340191376302282, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
       propertyPath: m_Pivot.x
@@ -247,6 +267,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7424818002516100094, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8482966009622736960, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -261,6 +285,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482966009622736960, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582572930965312651, guid: a2a29bd67b71794449b974e0865eacad, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
